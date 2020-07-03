@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "sorcery/bcs/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "sorcery-bcs"
+  spec.name          = "sorcery-tochka_bank"
   spec.version       = Sorcery::Bcs::VERSION
   spec.authors       = ["AlexanderShvaykin"]
   spec.email         = ["skiline.alex@gmail.com"]
 
-  spec.summary       = %q{Sorcery provider for HeadHunter}
-  spec.homepage      = "https://github.com/teachbase/sorcery-bcs"
+  spec.summary       = %q{Sorcery provider for Tochka Bank}
+  spec.homepage      = "https://github.com/teachbase/sorcery-tochka_bank"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

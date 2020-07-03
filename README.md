@@ -1,13 +1,13 @@
 # Sorcery::Bcs
 
-**BCS** as auth provider in Sorcery
+**Tochka Bank** as auth provider in Sorcery
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sorcery-bcs'
+gem 'sorcery-tochka_bank'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sorcery-bcs
+    $ gem install sorcery-tochka_bank
 
 ## Usage
 
-Just add this gem and you can use BCS as auth provider
+Just add this gem and you can use Tochka Bank as auth provider
 
 ## Development
 

@@ -8,7 +8,7 @@ module Sorcery
     #   config.bcs.secret = <secret>
     #   ...
     #
-    class Bcs < Base
+    class TochkaBank < Base
       include Protocols::Oauth2
 
       attr_accessor :auth_path, :token_path, :user_info_url, :scope, :response_type
@@ -16,11 +16,11 @@ module Sorcery
       def initialize
         super
 
-        @scope          = nil
-        @site           = 'https://studytrade.net'
-        @user_info_url  = 'https://studytrade.net/oauth/resource/name'
+        @scope          = "default"
+        @site           = ''
+        @user_info_url  = ''
         @auth_path      = ''
-        @token_path     = '/oauth/token'
+        @token_path     = ''
         @grant_type     = 'authorization_code'
       end
 

@@ -1,5 +1,5 @@
 module Sorcery
-  module Bcs
+  module TochkaBank
     VERSION = "0.1.2"
   end
 end
