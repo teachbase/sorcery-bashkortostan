@@ -11,26 +11,21 @@ module Sorcery
     class TochkaBank < Base
       include Protocols::Oauth2
 
-      attr_accessor :auth_path, :token_path, :user_info_url, :scope, :response_type
+      attr_accessor :auth_path, :token_path, :scope, :response_type
 
       def initialize
         super
 
         @scope          = "default"
-        @site           = ''
-        @user_info_url  = ''
-        @auth_path      = ''
-        @token_path     = ''
+        @site           = "https://auth-test.tochka-tech.com"
+        @auth_path      = '/authorize'
+        @token_path     = '/token'
         @grant_type     = 'authorization_code'
+        @state          = SecureRandom.uuid
       end
 
-      def get_user_hash(access_token)
-        response = access_token.get(user_info_url)
-
-        auth_hash(access_token).tap do |h|
-          h[:user_info] = JSON.parse(response.body)
-          h[:uid] = h.dig(:user_info, "uid")
-        end
+      def get_user_hash(_token)
+        {}
       end
 
       def login_url(params, session)
@@ -42,7 +37,7 @@ module Sorcery
           a[:code] = params[:code] if params[:code]
         end
 
-        get_access_token(args, token_url: token_path, mode: :query, param_name: :access_token)
+        get_access_token(args, token_url: token_url, token_method: :post)
       end
     end
   end
