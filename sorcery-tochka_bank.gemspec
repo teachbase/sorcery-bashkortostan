@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "sorcery/bcs/version"
+require "sorcery/tochka_bank/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "sorcery-tochka_bank"
-  spec.version       = Sorcery::Bcs::VERSION
+  spec.version       = Sorcery::TochkaBank::VERSION
   spec.authors       = ["AlexanderShvaykin"]
   spec.email         = ["skiline.alex@gmail.com"]
 
