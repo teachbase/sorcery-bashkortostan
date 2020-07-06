@@ -8,7 +8,7 @@ module Sorcery
     #   config.bcs.secret = <secret>
     #   ...
     #
-    class TochkaBank < Base
+    class Tochkabank < Base
       include Protocols::Oauth2
 
       attr_accessor :auth_path, :token_path, :scope, :response_type
@@ -21,11 +21,14 @@ module Sorcery
         @auth_path      = '/authorize'
         @token_path     = '/token'
         @grant_type     = 'authorization_code'
-        @state          = SecureRandom.uuid
       end
 
-      def get_user_hash(_token)
-        {}
+      def get_user_hash(token)
+        token_response = token.params
+        {
+          user_info: token_response.fetch("user"),
+          uid: token_response.fetch("login")
+        }
       end
 
       def login_url(params, session)
@@ -37,7 +40,7 @@ module Sorcery
           a[:code] = params[:code] if params[:code]
         end
 
-        get_access_token(args, token_url: token_url, token_method: :post)
+        get_access_token(args, token_url: token_path, token_method: :post)
       end
     end
   end

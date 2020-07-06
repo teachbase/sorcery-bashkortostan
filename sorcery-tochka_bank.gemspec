@@ -5,7 +5,7 @@ require "sorcery/tochka_bank/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "sorcery-tochka_bank"
-  spec.version       = Sorcery::TochkaBank::VERSION
+  spec.version       = Sorcery::Tochkabank::VERSION
   spec.authors       = ["AlexanderShvaykin"]
   spec.email         = ["skiline.alex@gmail.com"]
 
