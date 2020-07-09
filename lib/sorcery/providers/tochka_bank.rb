@@ -27,7 +27,7 @@ module Sorcery
         token_response = token.params
         {
           user_info: token_response.fetch("user"),
-          uid: token_response.fetch("login").gsub(%r{^*.//}, "").downcase
+          uid: token_response.fetch("login").downcase
         }
       end
 
