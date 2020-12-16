@@ -5,20 +5,19 @@ module Sorcery
     class Bashkortostan < Base
       include Protocols::Oauth2
 
-      attr_accessor :auth_path, :token_path, :scope, :user_info
+      attr_accessor :auth_path, :token_path, :scope, :user_info_path
 
       def initialize
         super
 
-        @auth_path  = '/oauth/authorize.php'
-        @token_path = '/oauth/token.php'
-        @grant_type = 'authorization_code'
-        @user_info  = '/oauth/userinfo.php'
+        @auth_path       = '/oauth/authorize.php'
+        @token_path      = '/oauth/token.php'
+        @grant_type      = 'authorization_code'
+        @user_info_path  = '/oauth/userinfo.php'
       end
 
       def get_user_hash(token)
-        token_response = token.params
-        response = access_token.get(user_info_url)
+        response = token.get(user_info_path)
         {
           user_info: {},
           uid: rand(10000)
