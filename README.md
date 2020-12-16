@@ -1,4 +1,4 @@
-# Sorcery::Providers::Tochkabank
+# Sorcery::Providers::Bashkortostan
 
 **edu.bashkortostan.ru** as auth provider in Sorcery
 
