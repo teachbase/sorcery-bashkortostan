@@ -1,13 +1,13 @@
 # Sorcery::Providers::Tochkabank
 
-**Tochka Bank** as auth provider in Sorcery
+**edu.bashkortostan.ru** as auth provider in Sorcery
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sorcery-tochka_bank'
+gem 'sorcery-bashkortostan'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sorcery-tochka_bank
+    $ gem install sorcery-bashkortostan
 
 ## Usage
 
-Just add this gem and you can use Tochka Bank as auth provider
+Just add this gem and you can use edu.bashkortostan.ru as auth provider
 
 ## Development
 
@@ -28,7 +28,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/teachbase/sorcery-tochka_bank.
+Bug reports and pull requests are welcome on GitHub at https://github.com/teachbase/sorcery-bashkortostan.
 
 ## License
 
