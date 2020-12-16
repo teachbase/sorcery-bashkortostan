@@ -2,32 +2,26 @@ require 'sorcery/providers/base'
 
 module Sorcery
   module Providers
-    # This class adds support for OAuth with hh.ru.
-    #
-    #   config.bcs.key = <key>
-    #   config.bcs.secret = <secret>
-    #   ...
-    #
     class Bashkortostan < Base
       include Protocols::Oauth2
 
-      attr_accessor :auth_path, :token_path, :scope, :response_type
+      attr_accessor :auth_path, :token_path, :scope, :user_info
 
       def initialize
         super
 
-        @scope          = "default"
-        @site           = "https://auth-test.tochka-tech.com"
-        @auth_path      = '/authorize'
-        @token_path     = '/token'
-        @grant_type     = 'authorization_code'
+        @auth_path  = '/oauth/authorize'
+        @token_path = '/oauth/token'
+        @grant_type = 'authorization_code'
+        @user_info  = '/oauth/userinfo'
       end
 
       def get_user_hash(token)
         token_response = token.params
+        response = access_token.get(user_info_url)
         {
-          user_info: token_response.fetch("user"),
-          uid: token_response.fetch("login").downcase
+          user_info: {},
+          uid: rand(10000)
         }
       end
 
