@@ -5,7 +5,7 @@ module Sorcery
     class Bashkortostan < Base
       include Protocols::Oauth2
 
-      attr_accessor :auth_path, :token_path, :scope, :user_info_path
+      attr_accessor :auth_path, :token_path, :scopes, :user_info_path
 
       def initialize
         super
@@ -18,14 +18,15 @@ module Sorcery
 
       def get_user_hash(token)
         response = token.get(user_info_path)
+        data = JSON.parse(response.body)
         {
-          user_info: {},
-          uid: rand(10000)
+          user_info: data,
+          uid: data.fetch("sub")
         }
       end
 
       def login_url(params, session)
-        authorize_url(authorize_url: auth_path)
+        authorize_url(authorize_url: auth_path).gsub(/scope/, "scope=#{scopes}")
       end
 
       def process_callback(params, _session)
