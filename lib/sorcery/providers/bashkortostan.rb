@@ -10,10 +10,10 @@ module Sorcery
       def initialize
         super
 
-        @auth_path  = '/oauth/authorize'
-        @token_path = '/oauth/token'
+        @auth_path  = '/oauth/authorize.php'
+        @token_path = '/oauth/token.php'
         @grant_type = 'authorization_code'
-        @user_info  = '/oauth/userinfo'
+        @user_info  = '/oauth/userinfo.php'
       end
 
       def get_user_hash(token)
