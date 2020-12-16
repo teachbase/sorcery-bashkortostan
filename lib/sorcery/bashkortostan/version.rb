@@ -1,5 +1,5 @@
 module Sorcery
-  module Tochkabank
+  module Bashkortostan
     VERSION = "0.1.0"
   end
 end

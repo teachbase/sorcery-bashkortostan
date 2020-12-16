@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "sorcery/tochka_bank/version"
+require "sorcery/bashkortostan/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "sorcery-tochka_bank"
-  spec.version       = Sorcery::Tochkabank::VERSION
+  spec.name          = "sorcery-bashkortostan"
+  spec.version       = Sorcery::Bashkortostan::VERSION
   spec.authors       = ["AlexanderShvaykin"]
   spec.email         = ["skiline.alex@gmail.com"]
 
-  spec.summary       = %q{Sorcery provider for Tochka Bank}
-  spec.homepage      = "https://github.com/teachbase/sorcery-tochka_bank"
+  spec.summary       = %q{Sorcery provider for edu.bashkortostan.ru}
+  spec.homepage      = "https://github.com/teachbase/sorcery-bashkortostan"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

@@ -8,7 +8,7 @@ module Sorcery
     #   config.bcs.secret = <secret>
     #   ...
     #
-    class Tochkabank < Base
+    class Bashkortostan < Base
       include Protocols::Oauth2
 
       attr_accessor :auth_path, :token_path, :scope, :response_type
